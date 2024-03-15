@@ -1,7 +1,7 @@
 name: GitHub Action Slack Notify CI
 
 on:
-  - push
+  #  - push
   - pull_request
 
 jobs:
