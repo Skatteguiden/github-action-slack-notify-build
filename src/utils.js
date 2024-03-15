@@ -60,6 +60,7 @@ function buildSlackAttachments({ status, color, github }) {
   ];
 
   const icon_url = payload.sender.avatar_url + '&s=256';
+  console.log('Using icon url: ' + icon_url);
   return {
     attachments,
     icon_url,
