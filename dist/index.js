@@ -10004,7 +10004,7 @@ const { context } = __webpack_require__(469);
 
 function buildSlackAttachments({ status, color, github }) {
   const { payload, ref, workflow, eventName, actor } = github.context;
-  console.log(JSON.stringify(github.context, null, 4));
+  // console.log(JSON.stringify(github.context, null, 4));
   const { owner, repo } = context.repo;
   const branch = eventName === 'pull_request' ? payload.pull_request.head.ref : ref.replace('refs/heads/', '');
 
@@ -10062,7 +10062,7 @@ function buildSlackAttachments({ status, color, github }) {
   ];
 
   const icon_url = payload.sender.avatar_url + '&s=256';
-  console.log("Using icon url: " + icon_url)
+  // console.log('Using icon url: ' + icon_url);
   return {
     attachments,
     icon_url,
