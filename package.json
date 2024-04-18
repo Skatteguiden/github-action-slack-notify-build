@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "ncc build index.js",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider ncc build index.js",
     "test": "jest"
   },
   "dependencies": {
