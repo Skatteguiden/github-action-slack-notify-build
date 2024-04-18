@@ -9,6 +9,8 @@ function buildSlackAttachments({ status, color, github }) {
   const sha = eventName === 'pull_request' ? payload.pull_request.head.sha : github.context.sha;
   const runId = parseInt(process.env.GITHUB_RUN_ID, 10);
 
+  const fallback = `${actor} : ${workflow}: ${repo} - ${status}`;
+
   const referenceLink =
     eventName === 'pull_request'
       ? {
@@ -25,6 +27,7 @@ function buildSlackAttachments({ status, color, github }) {
   const attachments = [
     {
       color,
+      fallback,
       fields: [
         {
           title: 'Repo',
